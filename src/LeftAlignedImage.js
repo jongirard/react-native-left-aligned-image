@@ -38,7 +38,7 @@ export class LeftAlignedImage extends Component {
             const {imageWidth, imageHeight} = calcDim(iw, ih, height, width)
 
             this.setState({
-                imageWidth, 
+                imageWidth,
                 imageHeight,
                 source,
                 height: height,
@@ -49,7 +49,7 @@ export class LeftAlignedImage extends Component {
 
     render() {
         const {source, height, width, imageWidth, imageHeight} = this.state;
-        
+
         const localStyle = height ? {
             height: height,
             width: width,
@@ -57,10 +57,10 @@ export class LeftAlignedImage extends Component {
 
         return (
             <View style={[styles.container, localStyle]}>
-                {source ? 
+                {source ?
                     <Image
                         style={{width: imageWidth, height: imageHeight}}
-                        resizeMode="center"
+                        resizeMode="contain"
                         source={source}
                     />
                 :
